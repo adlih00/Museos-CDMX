@@ -1,0 +1,150 @@
+:root {
+  --color-primario: #c77bcf;
+  --color-secundario: #8f7bff;
+  --color-fondo: #e9edf0;
+  --color-superficie: #f4f4f4;
+  --color-footer: #f7f6e8;
+  --texto-principal: #1e1e1e;
+  --texto-secundario: #555;
+}
+
+/* Fondo general */
+body {
+  background-color: var(--color-fondo);
+  color: var(--texto-principal);
+}
+
+/* Header */
+.article-header {
+  background: linear-gradient(180deg, var(--color-primario), #e4b5d8);
+  color: white;
+  padding: 60px 0;
+  margin-bottom: 60px;
+}
+
+/* Bloque editorial */
+.content-block {
+  border: none;
+  border-radius: 22px;
+  background-color: var(--color-superficie);
+  margin-bottom: 48px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Línea decorativa */
+.content-block::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    var(--color-secundario),
+    var(--color-primario)
+  );
+}
+
+/* Interior */
+.content-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  padding: 32px;
+  align-items: center;
+}
+
+/* Texto */
+.content-text h2 {
+  color: var(--color-primario);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.content-text p,
+.content-text ul li {
+  color: var(--texto-secundario);
+  line-height: 1.6;
+}
+
+/* Imagen (placeholder) */
+.content-image {
+  width: 100%;
+  height: 220px;
+  background-color: #000;
+  border-radius: 18px;
+}
+
+/* Alternancia izquierda / derecha */
+.image-right .content-inner {
+  grid-template-columns: 1fr 1fr;
+}
+
+.image-right .content-text {
+  order: 1;
+}
+
+.image-right .content-image {
+  order: 2;
+}
+
+.image-left .content-text {
+  order: 2;
+}
+
+.image-left .content-image {
+  order: 1;
+}
+
+/* Listas */
+.content-text ul {
+  padding-left: 18px;
+}
+
+.content-text ul li {
+  margin-bottom: 6px;
+}
+
+/* Footer */
+footer {
+  background-color: var(--color-footer);
+  padding: 20px;
+  text-align: center;
+  margin-top: 80px;
+  font-size: 0.9rem;
+  color: var(--texto-secundario);
+}
+
+/* Contenedor de imagen */
+.content-image {
+  max-width: 260px;      /* ancho máximo */
+  max-height: 200px;     /* alto máximo */
+  width: 100%;
+  margin: 0 auto;        /* centra la imagen */
+}
+
+/* Link */
+.content-image a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Imagen */
+.content-image img {
+  width: 100%;
+  height: 100%;
+  max-width: 260px;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover elegante */
+.content-image a:hover img {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
